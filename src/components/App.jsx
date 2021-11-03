@@ -3,16 +3,17 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setCount } from '../reducers/reposReducer';
 import './app.less'
+import Main from './main/Main';
 
 const App = () => {
     const dispatch = useDispatch();
     
 
     return (
-        <div className="app">
-            
-            <div>{count}</div>
-        </div>
+        <BrowserRouter>
+            <div className="container"></div>
+            <Route path="/" component={Main}></Route>
+        </BrowserRouter>
     );
 };
 
