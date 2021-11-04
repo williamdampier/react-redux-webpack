@@ -5,7 +5,7 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
-    Link
+    Navigate
   } from "react-router-dom";
 import Main from "./main/Main";
 
@@ -17,9 +17,10 @@ const App = () => {
         <Router>
             <div className="container">
             <Routes>
-                <Route path="/" element={<Main/>}>
-                    
-                </Route>
+                <Route exact path="/" element={<Main/>}></Route>
+                
+               
+                
           </Routes>
             </div>
         </Router>
