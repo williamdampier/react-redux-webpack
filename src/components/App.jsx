@@ -1,7 +1,12 @@
 import React from 'react';
 import './app.less'
 import {useDispatch, useSelector} from "react-redux";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+  } from "react-router-dom";
 import Main from "./main/Main";
 
 const App = () => {
@@ -9,14 +14,15 @@ const App = () => {
 
 
     return (
-        <BrowserRouter>
+        <Router>
             <div className="container">
             <Routes>
-                 <Route path="/" component={<Main/>}/>
-            </Routes>
-                
+                <Route path="/" element={<Main/>}>
+                    
+                </Route>
+          </Routes>
             </div>
-        </BrowserRouter>
+        </Router>
     );
 };
 
