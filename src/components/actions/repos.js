@@ -1,10 +1,9 @@
-import axios from 'axios';
+import axios from 'axios'
+import {setRepos} from "../../reducers/reposReducer";
 
-export const getRepos = (searchQuery = "stars:%3E1") =>
-    {
-        return async (dispatch) => {
-            const response = await axios.get(`https://api.github.com/search/repositories?q={searchQuery}&sort=stars`);
-     
-        }
+export const getRepos = (searchQuery = "stars:%3E1") => {
+    return async (dispatch) => {
+        const response = await axios.get(`https://api.github.com/search/repositories?q=${searchQuery}&sort=stars`)
+        dispatch(setRepos(response.data))
     }
-export const setRepos = (repos) => ({type:SET_REPOS, payload:repos})
+}
